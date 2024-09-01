@@ -1,24 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import { DatePicker } from 'antd';
+import { BrowserRouter, Route, Routes, Redirect } from 'react-router-dom';
+import { TablePokemon } from './components/TablePokemon';
+import {TableDetails} from './components/TableDetails';
 
-function App() {
+const App =  () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<TablePokemon/>}/>
+      <Route path='/TableDetail/:id?' element={<TableDetails/>}/>
+    </Routes>
+    </BrowserRouter>   
   );
 }
 
